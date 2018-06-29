@@ -1,0 +1,282 @@
+<!-- <ul class="list-group" >
+  <li class="list-group-item" >{{ user.name }}</li>
+</ul> -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+          <label>Countries List</label>
+          <select [(ngModel)]="country" id="country">
+              <option value="" disabled selected>>select a country</option>
+              <option *ngFor="let country of countries" >{{ country.name }} +{{ country.callingCodes }}</option>
+          </select>
+      </div>
+      
+      <div class="col-sm">
+          <label>Phone</label>
+          <form>
+              <input type="text" name="phone">
+          </form>
+      </div>
+      <div class="col-sm">
+        <!-- One of three columns -->
+      </div>
+    </div>
+  </div>
+
+
+<!-- <div class="container">
+  <div>
+    <ul class="list-group" *ngFor="let country of countries">
+      <li class="list-group-item">{{ country.name }} +{{ country.callingCodes }}</li>
+    </ul>
+  </div>
+  
+</div> -->
+
+<div class="container">
+    <form (submit)="onSubmit(isEdit)">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" [(ngModel)] = "user.name" name="name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)] = "user.email" name="email">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="form-control" [(ngModel)] = "user.phone" name="phone">
+        </div>
+        <input type="submit" class="btn btn-success" value="submit">
+      </form>
+      <br>
+</div>
+<div class="container">
+  <div *ngFor="let user of users">
+    <div class="well">
+        <ul class="list-group">
+            <li class="list-group-item">Name: {{ user.name }}</li>
+            <li class="list-group-item">Email: {{ user.email }}</li>
+            <li class="list-group-item">Phone: {{ user.phone }}</li>
+        </ul>
+        <br>
+        <button class="btn btn-primary btn-sm" (click)="onEditClick(user)">Edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">Delete</button>
+        <br><br>
+
+    </div>
+  </div>
+  
+</div>
+<!-- <div class="container">
+  
+  <h2>Users List</h2>
+  <h3>{{ errorMsg }}</h3>
+  <br>
+</div>
+
+<div class="container" *ngFor="let user of users" >
+    
+  <div class="row">
+    <div class="col-sm">
+      <li class="list-group-item">{{ user.name }}</li>
+    </div>
+    <div class="col-sm">
+        <li class="list-group-item">{{ user.phone }}</li>
+      
+    </div>
+    <div class="col-sm">
+        <li class="list-group-item">{{ user.email }}</li>
+      
+    </div>
+  </div>
+</div> -->
+
+<!-- <ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of data" >{{ item }}</li>
+</ul> -->
+
+<!-- <ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of users" >{{ item }}</li>
+</ul> -->
+
+
+<!-- <div class="container">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+            <label>Name</label>
+            <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="user.name"
+                name="name"
+                #userName="ngModel"
+                minlength="2"
+                required
+            >
+            <div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">Name is required</div>
+            <div *ngIf="userName.errors?.minlength && userName.touched" class="alert alert-danger">Name should be at least 2 characters</div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="user.email"
+                name="email"
+                #userEmail="ngModel"
+                required
+            >
+            <div *ngIf="userEmail.errors?.required && userEmail.touched" class="alert alert-danger">Email is required</div>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="user.phone"
+                name="phone"
+                #userPhone="ngModel"
+                minlength="10"
+            >
+            <div *ngIf="userPhone.errors?.minlength && userPhone.touched" class="alert alert-danger">Enter a valid phone number</div>
+        </div>
+        <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+      
+</div> -->
+
+<!-- <h1>Hello World</h1>
+<div class="container">
+    <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" [(ngModel)]="name" name="name">
+        </div>
+        <input type="submit" class="btn btn-success" value="submit">
+    </form>
+
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of users" >{{ item }}</li>
+    </ul>
+      
+</div> -->
+
+
+<!-- <div class="container">
+    <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="name" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" [(ngModel)]="age" name="age" class="form-control">
+        </div>
+        <input type="submit" value="submit" class="btn btn-success">
+      </form>
+      
+      <h4>Name: {{ name }}</h4>
+      <h4>Age: {{ age }}</h4>
+</div> -->
+
+<!-- <input type="text" (keyup)="fireEvent($event)"> -->
+
+<!-- <button (click)="changeValue()">Change value</button>
+<div *ngIf="value" >
+  <h1>{{ text }}</h1>
+</div> -->
+
+<!-- <button (click)="fireEvent($event)">Click Event</button>
+<hr>
+<br>
+<button (mouseover)="fireEvent($event)">Mouser Over</button>
+<br>
+<button (mousedown)="fireEvent($event)">Mouser Down</button>
+<br>
+<button (mouseup)="fireEvent($event)">Mouser Up</button>
+<br>
+<button (dblclick)="fireEvent($event)">Double click</button>
+<br>
+<button (drag)="fireEvent($event)">Drag event</button> -->
+
+
+
+<!-- <p>My birthday is {{ birthday | date | uppercase }}</p>
+<p>My birthday is {{ birthday | date:"MM-dd-yyyy" }}</p>
+<p>I was born in {{ birthday | date:"yyyy" }}</p>
+<p>I love {{ 'cake' | uppercase}}</p>
+<p>I hate cat {{ 'CATS' | lowercase }}</p>
+<p> {{ total | currency:"GBP":"1" }}</p>
+<p>Our fee is {{ fee | percent }}</p> -->
+
+<!-- <div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">Font size depend on isSpecial</div>
+<div [ngStyle]="currentStyles">This siv is initially saveable $ special</div> -->
+
+
+<!-- <h4 [class.special]="isSpecial">This class binding is special</h4>
+<h4 [ngClass]="currentClass" >This div is initially !!!!!!!!!!!!!!!!</h4> -->
+
+<!-- <h1></h1> -->
+
+<!-- <hr>
+<h2>Create Post</h2>
+<p [hidden]="isUnchanged">Post hasbeen changed, please saved!!</p>
+<button [disabled]="isUnchanged">Save</button> -->
+
+<!-- <h1>3 ways to bind property</h1>
+<div><img src="{{ imageUrl }}"></div>
+<div><img [src]="imageUrl"></div>
+<div><img bind-src="imageUrl"></div>
+
+<h4>Image Location: <span [textContent]="imageUrl"></span></h4> -->
+
+
+<!-- <h1>Hello   -->
+  <!-- <span *ngIf="showName" >{{ name }}</span> 
+  <span *ngIf="!showName" >world</span>  -->
+<!-- 
+  <span *ngIf="showName; else noName" >{{ name }}</span>
+  <ng-template #noName>World</ng-template>
+
+  <p>Hello {{ showName ? name : 'World' }}</p>
+
+  <div [ngSwitch]="greetings">
+    <div *ngSwitchCase = "'1'">Hello World</div>
+    <div *ngSwitchCase = "'2'">Hi There!</div>
+    <div *ngSwitchCase = "'3'">What's Up</div>
+    <div *ngSwitchDefault>Hello</div>
+  </div>
+</h1> -->
+
+
+<!-- <h1>Hello World {{ people }}</h1>
+<ul>
+  <li *ngFor="let person of people" >
+    {{ person }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let person of people; let i = index" >
+    {{ i + 1 }} {{ person }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let person of people2" >
+    {{ person.firstName }} {{ person.lastName }}
+  </li>
+</ul> -->
+<!-- <h1 class="special">hello world</h1> -->
+
+
+<!-- <h1>Hello {{ name }}</h1> -->
+
+
+<!-- <p>
+  sandbox works!
+</p>
+<h1>Hello {{name}} is {{ age }} years old</h1>
+<h2>My name is {{ person.firstname }} {{ person.lastName}}</h2>
+<li>{{ showAge() }}</li> -->
